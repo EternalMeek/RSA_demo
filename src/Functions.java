@@ -14,10 +14,12 @@ public class Functions {
 
         BigInteger i = BigInteger.valueOf(5);
         while(i.compareTo(a.sqrt())<=0){
+            System.out.println(i);
             if(a.mod(i).compareTo(BigInteger.ZERO) == 0)
                 divs.add(i);
             if(a.mod(i.add(BigInteger.valueOf(2))).compareTo(BigInteger.ZERO) == 0)
                 divs.add(i.add(BigInteger.valueOf(2)));
+            i = i.add(BigInteger.valueOf(6));
         }
 
         if(divs.size() == 0)
