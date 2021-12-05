@@ -3,7 +3,8 @@ import java.util.ArrayList;
 
 public class Functions {
 
-    public String primeCheck(BigInteger a){
+    public String primeCheck(String s){
+        BigInteger a = new BigInteger(s);
         String ans="";
         ArrayList<BigInteger> divs = new ArrayList<>();
 
