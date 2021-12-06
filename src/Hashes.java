@@ -1,9 +1,7 @@
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.security.MessageDigest;
-import java.util.ArrayList;
+
 
 public class Hashes {
 
@@ -31,7 +29,7 @@ public class Hashes {
      //   System.out.println(getHash("1",algos[0]));
 
         PrintWriter writer = new PrintWriter("lookup.txt");
-        for(int j = 0; j < Integer.MAX_VALUE; j++) {
+        for(int j = 0; j <= (int)Math.ceil(Math.sqrt(Integer.MAX_VALUE)) * 5000; j++) {
             String md2Hex = org.apache.commons.codec.digest.DigestUtils.md2Hex(String.valueOf(j));
             writer.write("md2, " + j + ", " + md2Hex + "\n");
             String md5Hex = org.apache.commons.codec.digest.DigestUtils.md5Hex(String.valueOf(j));
