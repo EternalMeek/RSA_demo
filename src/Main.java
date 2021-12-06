@@ -27,6 +27,27 @@ public class Main {
                 i++;
             }
         }
+
+        String[] items = new String[20];
+        String[] codes = new String[20];
+        BufferedReader br = new BufferedReader(new FileReader("items.txt"));
+        String line;
+        try {
+            int x = 0;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(" ");
+                if(values.length >= 2){
+                    items[x] = values[0];
+                    codes[x] = values[1];
+                    x++;
+                }
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        for(int j = 0; j< 20; j++) {
+            System.out.println(items[j] + " " + codes[j]);
+        }
 //        String enc = rsa.encrypt("22", pubkey, n).toString();
 //        String dec = rsa.decrypt(enc, priKey, n).toString();
 //        System.out.println("enc is : " + enc + "\n");
@@ -88,7 +109,6 @@ public class Main {
                 e.printStackTrace();
             }
         }
-
         return keys;
     }
 }

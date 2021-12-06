@@ -1,32 +1,10 @@
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.security.MessageDigest;
-
 
 public class Hashes {
 
-    //Available algorithms: MD2, MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512
-
-    public static String getHash(String input, String algos){
-        String hashValue="";
-        StringBuilder sb = new StringBuilder();
-        try{
-            MessageDigest messageDigest = MessageDigest.getInstance(algos);
-            messageDigest.update(input.getBytes());
-            byte[] digestedBytes = messageDigest.digest();
-            for(int i = 0; i< digestedBytes.length; i++) {
-                sb.append(Integer.toString((digestedBytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return sb.toString();
-    }
-
     public static void main(String[] args) throws FileNotFoundException {
         //String[] algos = {"MD2", "MD5", "SHA-256", "SHA-384", "SHA-512"};
-
-     //   System.out.println(getHash("1",algos[0]));
 
         PrintWriter writer = new PrintWriter("lookup.txt");
         for(int j = 0; j <= (int)Math.ceil(Math.sqrt(Integer.MAX_VALUE)) * 5000; j++) {
