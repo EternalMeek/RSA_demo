@@ -37,9 +37,9 @@ public class Hashes {
             String md5Hex = org.apache.commons.codec.digest.DigestUtils.md5Hex(String.valueOf(j));
             writer.write("md5," + j + ", " + md5Hex + "\n");
             String sha256hex = org.apache.commons.codec.digest.DigestUtils.sha256Hex(String.valueOf(j));
-            writer.write("sha256, " + j + ", " + md5Hex + "\n");
+            writer.write("sha256, " + j + ", " + sha256hex + "\n");
             String sha384Hex = org.apache.commons.codec.digest.DigestUtils.sha384Hex(String.valueOf(j));
-            writer.write("sha384, " + j + ", " + md5Hex + "\n");
+            writer.write("sha384, " + j + ", " + sha384Hex + "\n");
             String sha512Hex = org.apache.commons.codec.digest.DigestUtils.sha512Hex(String.valueOf(j));
             writer.write("sha512, " + j + ", " + sha512Hex + "\n");
             //   System.out.println(sha512Hex);

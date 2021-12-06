@@ -84,7 +84,9 @@ public class Main {
                     if(values.length >= 2)
                         keys[i++] = new BigInteger(values[1]);
                 }
-            }catch(IOException e){}
+            }catch(IOException e){
+                e.printStackTrace();
+            }
         }
 
         return keys;
