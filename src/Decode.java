@@ -80,9 +80,7 @@ public class Decode {
             }
         }
         //System.out.println("Active threads for this thread group: " + Thread.activeCount());
-
     }
-
 
     static Thread threadRef(String name) {
         Map<Thread, StackTraceElement[]> map = Thread.getAllStackTraces();
@@ -157,5 +155,4 @@ class FindPrimeFactors extends Thread {
         }
         return returnVal;
     }
-
 }

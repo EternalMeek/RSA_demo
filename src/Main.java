@@ -1,5 +1,6 @@
 import java.io.*;
 import java.math.BigInteger;
+import java.util.Scanner;
 
 public class Main {
 
@@ -28,53 +29,41 @@ public class Main {
             }
         }
 
-        String[] items = new String[20];
-        String[] codes = new String[20];
-        BufferedReader br = new BufferedReader(new FileReader("items.txt"));
-        String line;
-        try {
-            int x = 0;
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(" ");
-                if(values.length >= 2){
-                    items[x] = values[0];
-                    codes[x] = values[1];
-                    x++;
-                }
+        OneN_OT ot = new OneN_OT();
+        boolean running = true;
+        while (running){
+            System.out.println("Starting... \n Menu: ");
+            System.out.printf('\u2022' + "(1) - Inquirer%n" +
+                    '\u2022' + "(2) - Agent%n" +
+                    '\u2022' + "(0) - Exit1%n");
+            Scanner input = new Scanner(System.in);
+            switch (input.nextInt()){
+                case 1:
+                    System.out.print("Enter your random number: ");
+                    BigInteger irn = BigInteger.valueOf(input.nextInt());
+                    System.out.print("Enter the code of item you want: ");
+                    BigInteger code = BigInteger.valueOf(input.nextInt());
+                    System.out.println(ot.Inquirer(rsa, pubkey, n, irn, code));
+                    break;
+                case 2:
+                    System.out.print("Enter request: ");
+                    String req = input.next();
+                    String[] outputs = ot.Agent(req, rsa, priKey, n);
+                    for(String s : outputs)
+                        System.out.println(s);
+                    break;
+                case 0:
+                    running = false;
+                    break;
             }
-        }catch(IOException e){
-            e.printStackTrace();
         }
-        for(int j = 0; j< 20; j++) {
-            System.out.println(items[j] + " " + codes[j]);
-        }
-//        String enc = rsa.encrypt("22", pubkey, n).toString();
-//        String dec = rsa.decrypt(enc, priKey, n).toString();
-//        System.out.println("enc is : " + enc + "\n");
-//        System.out.println("dec is : " + dec + "\n");
-//        String[] tests = {"2", "6", "7", "13", "29", "52", "1001"};
-//        int i = 0;
-//        while(i < tests.length){
-//            if(!tests[i].equals(rsa.decrypt(rsa.encrypt(tests[i], keypair.getPubKey(), keypair.getN()).toString(), keypair.getPriKey(), keypair.getN()))){
-//                System.out.println("Key generation failed, regenerating key");
-//                keypair = new KeyGenerate();
-//                i++;
-//            }
-//            else
-//                i++;
-//        }
+
 //        System.out.println("Your RSA public key is :\n" + keypair.getPubKey()
 //                + "\n------------------------------------\n"
 //                + "The n is :\n" + keypair.getN() +"\n"+keypair.getN().bitLength() + "bits"
 //                + "\n===========================================================\n"
 //                + "Private key is :\n" + keypair.getPriKey()
 //                + "\n------------------------------------\n" );
-
-//        Functions functions = new Functions();
-//        //String s = functions.primeCheck("5011881136975211310478237074422215001456615111800358007244391642988177092423881373671901184354140120792151356405695649929207972383490882320620297156067981878482874430456032475964317248770282713655041101056132892115231548089612995573254208400360330877398124052165933111091929132478792329883458258156405373703139095092941207139498371248912914821364675932439010410274592077676107203451746190380648244293244049013286370656101462282509794448945925813162350076741306021610674328531931429024989935296280273751274865294425926222984694820260090040384876187208515911601490818206946736494544863784410178272328912852746387975881");
-//        BigInteger i = new BigInteger("5011881136975211310478237074422215001456615111800358007244391642988177092423881373671901184354140120792151356405695649929207972383490882320620297156067981878482874430456032475964317248770282713655041101056132892115231548089612995573254208400360330877398124052165933111091929132478792329883458258156405373703139095092941207139498371248912914821364675932439010410274592077676107203451746190380648244293244049013286370656101462282509794448945925813162350076741306021610674328531931429024989935296280273751274865294425926222984694820260090040384876187208515911601490818206946736494544863784410178272328912852746387975881");
-//        String s = i.isProbablePrime(50)? "Prime Number" : "Not Prime Number";
-//        System.out.println(s);
     }
 
     public static BigInteger[] readFile() throws FileNotFoundException {

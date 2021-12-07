@@ -29,11 +29,10 @@ public class KeyGenerate {
         return n;
     }
 
-
     private void initial(){
         Random rnd = new Random();
         //find a prime number p
-        BigInteger p = new BigInteger(1024, 30, rnd);
+        BigInteger p = new BigInteger(1024, 20, rnd); //create number of 1024 bits with (1-1/2^20) certainty prime
         while(!p.isProbablePrime(20)){
             p = new BigInteger(1024, 20, rnd);
         }
@@ -41,14 +40,16 @@ public class KeyGenerate {
         //System.out.println("p is : " + p +  "\n---------------------------------+\n");
 
         //find a prime number q
-        BigInteger q = new BigInteger(1022, 20, rnd);
+        BigInteger q = new BigInteger(1022, 20, rnd); //create number of 1022 bits with (1-1/2^20) certainty prime
         while(!q.isProbablePrime(20)){
             q = new BigInteger(1022, 20, rnd);
         }
         this.q = q;
         //System.out.println("q is : " + q + "\n---------------------------------+\n");
 
+        // n = pq
         n = p.multiply(q);
+        // z = (p-1)(q-1)
         BigInteger z = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
         generate(z);
     }
@@ -66,13 +67,4 @@ public class KeyGenerate {
         //d is private key
         priKey = pubKey.modInverse(a);
     }
-
-    //check if random generated number really is prime
-    private boolean validate(BigInteger a){
-        Functions function = new Functions();
-        if(!function.primeCheck(a.toString()).equals("true"))
-            return true;
-        return false;
-    }
-
 }
