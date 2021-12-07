@@ -8,13 +8,12 @@ public class Functions {
         String ans="";
         ArrayList<BigInteger> divs = new ArrayList<>();
 
-        if(a.mod(BigInteger.valueOf(2)).compareTo(BigInteger.ZERO) == 0
-                || a.mod(BigInteger.valueOf(3)).compareTo(BigInteger.ZERO) == 0 )
-            return ans="Divisible by 2 or 3";
+//        if(a.mod(BigInteger.valueOf(2)).compareTo(BigInteger.ZERO) == 0
+//                || a.mod(BigInteger.valueOf(3)).compareTo(BigInteger.ZERO) == 0 )
+//            return ans="Divisible by 2 or 3";
 
         BigInteger i = BigInteger.valueOf(5);
         while(i.compareTo(a.sqrt())<=0){
-            System.out.println(i);
             if(a.mod(i).compareTo(BigInteger.ZERO) == 0)
                 divs.add(i);
             if(a.mod(i.add(BigInteger.valueOf(2))).compareTo(BigInteger.ZERO) == 0)

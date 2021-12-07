@@ -20,7 +20,7 @@ public class Decode {
         BigInteger p1 = new BigInteger(bits1, 50, new Random());
         BigInteger p2 = new BigInteger(bits2, 50, new Random());
         //BigInteger largeComposite = p1.multiply(p2);
-        BigInteger largeComposite = new BigInteger("74226468067");
+        BigInteger largeComposite = new BigInteger("6276566754097137755466764816000720600280824644917074128203468518932072252994457386277825705171623221195825316938529495056106904279231186993560643288690709");
 
         //System.out.println(p1 + ", " + bits1 + " bits");
         //System.out.println(p2 + ", " + bits2 + " bits");
