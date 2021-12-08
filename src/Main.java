@@ -7,13 +7,13 @@ public class Main {
     public static void main (String[] args) throws FileNotFoundException {
 
 //        KeyGenerate keypair = new KeyGenerate();
-        BigInteger pubKey = new BigInteger("37");
-        BigInteger priKey = new BigInteger("465466669") ;
-        BigInteger n = new BigInteger("555618491");
-//        BigInteger[] keys = readFile();
-//        BigInteger pubKey = keys[2];
-//        BigInteger priKey = keys[4];
-//        BigInteger n = keys[3];
+//        BigInteger pubKey = new BigInteger("37");
+//        BigInteger priKey = new BigInteger("465466669") ;
+//        BigInteger n = new BigInteger("555618491");
+        BigInteger[] keys = readFile();
+        BigInteger pubKey = keys[2];
+        BigInteger priKey = keys[4];
+        BigInteger n = keys[3];
         RSA rsa = new RSA();
         String[] tests = {"2", "6", "7", "13", "22", "29", "52", "1001"};
         int i = 0;
