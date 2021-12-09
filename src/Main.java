@@ -7,13 +7,13 @@ public class Main {
     public static void main (String[] args) throws FileNotFoundException {
 
 //        KeyGenerate keypair = new KeyGenerate();
-//        BigInteger pubKey = new BigInteger("37");
-//        BigInteger priKey = new BigInteger("465466669") ;
-//        BigInteger n = new BigInteger("555618491");
-        BigInteger[] keys = readFile();
-        BigInteger pubKey = keys[2];
-        BigInteger priKey = keys[4];
-        BigInteger n = keys[3];
+        BigInteger pubKey = new BigInteger("3");
+        BigInteger priKey = new BigInteger("425507") ;
+        BigInteger n = new BigInteger("639889");
+//        BigInteger[] keys = readFile();
+//        BigInteger pubKey = keys[2];
+//        BigInteger priKey = keys[4];
+//        BigInteger n = keys[3];
         RSA rsa = new RSA();
         String[] tests = {"2", "6", "7", "13", "22", "29", "52", "1001"};
         int i = 0;
@@ -29,12 +29,13 @@ public class Main {
             }
         }
 
-        BigInteger p = new BigInteger("11003");
-        BigInteger q = new BigInteger("50497");
-        BigInteger z = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
-        BigInteger e = new BigInteger("37");
-        BigInteger d = e.modInverse(z);
-        System.out.println("private key is : " + d.toString());
+//        BigInteger p = new BigInteger("11003");
+//        BigInteger q = new BigInteger("50497");
+//        BigInteger z = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
+//        BigInteger e = new BigInteger("37");
+//        BigInteger d = e.modInverse(z);
+//        System.out.println("private key is : " + d.toString());
+
 //        Functions functions = new Functions();
 //        System.out.println("PRIME: " + functions.primeCheck("555618491"));
 
