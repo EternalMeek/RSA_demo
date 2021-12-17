@@ -16,7 +16,7 @@ public class OneN_OT {
         //getting items and RN from file
         String[] items = new String[20];
         String[] codes = new String[20];
-        BufferedReader br = new BufferedReader(new FileReader("JasonItem.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("items.txt"));
         String line;
         try {
             int x = 0;

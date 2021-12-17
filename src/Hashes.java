@@ -1,3 +1,4 @@
+/*
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -13,7 +14,7 @@ public class Hashes {
         File file = new File(fname);
         if (!file.exists()) {
             PrintWriter writer = new PrintWriter(fname);
-            for (int j = 0; j <= (int) Math.ceil(Math.sqrt(Integer.MAX_VALUE)) * 5000; j++) {
+            for (int j = 0; j <= (int) Math.ceil(Math.sqrt(Integer.MAX_VALUE)); j++) {
                 String md2Hex = org.apache.commons.codec.digest.DigestUtils.md2Hex(String.valueOf(j));
                 writer.write("md2, " + j + ", " + md2Hex + "\n");
                 String md5Hex = org.apache.commons.codec.digest.DigestUtils.md5Hex(String.valueOf(j));
@@ -30,3 +31,4 @@ public class Hashes {
         }
     }
 }
+*/

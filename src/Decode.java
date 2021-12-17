@@ -10,16 +10,16 @@ import java.util.*;
 
 public class Decode {
 
-    private static final int BIT_LENGTH = 100;
+//    private static final int BIT_LENGTH = 100;
     private static final int THREAD_COUNT = 16;
 
     public static void main(String args[]) {
-        int bits1 = new Random().nextInt(BIT_LENGTH - 3) + 2;
-        int bits2 = BIT_LENGTH - bits1;
-
-        BigInteger p1 = new BigInteger(bits1, 50, new Random());
-        BigInteger p2 = new BigInteger(bits2, 50, new Random());
-        //BigInteger largeComposite = p1.multiply(p2);
+//        int bits1 = new Random().nextInt(BIT_LENGTH - 3) + 2;
+//        int bits2 = BIT_LENGTH - bits1;
+//
+//        BigInteger p1 = new BigInteger(bits1, 50, new Random());
+//        BigInteger p2 = new BigInteger(bits2, 50, new Random());
+//        BigInteger largeComposite = p1.multiply(p2);
         BigInteger largeComposite = new BigInteger("6276566754097137755466764816000720600280824644917074128203468518932072252994457386277825705171623221195825316938529495056106904279231186993560643288690709");
 
         //System.out.println(p1 + ", " + bits1 + " bits");

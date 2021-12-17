@@ -57,9 +57,9 @@ public class KeyGenerate {
     private void generate(BigInteger a){
         //find a number e that is relative prime to z
         //e is public key
-        BigInteger e = new BigInteger(780, new Random());
+        BigInteger e = new BigInteger(320, new Random());
         while(e.gcd(a).compareTo(BigInteger.ONE) != 0){
-            e = new BigInteger(780, new Random());
+            e = new BigInteger(320, new Random());
         }
         pubKey = e;
 
