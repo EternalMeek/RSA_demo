@@ -12,7 +12,7 @@ public class Main {
         System.out.println("What would you like to do?");
         System.out.printf('\u2022' + "(S) - Own key pair%n" +
                 '\u2022' + "(O) - Other's%n" +
-                '\u2022' + "(G) - Generate other's private key%n" +
+                '\u2022' + "(G) - Other's private key%n" +
                 '\u2022' + "(E) - Exit%n");
         Scanner select = new Scanner(System.in);
         switch(select.next().charAt(0)) {
@@ -88,13 +88,6 @@ public class Main {
                     break;
             }
         }
-
-//        System.out.println("Your RSA public key is :\n" + keypair.getPubKey()
-//                + "\n------------------------------------\n"
-//                + "The n is :\n" + keypair.getN() +"\n"+keypair.getN().bitLength() + "bits"
-//                + "\n===========================================================\n"
-//                + "Private key is :\n" + keypair.getPriKey()
-//                + "\n------------------------------------\n" );
     }
 
     public static BigInteger[] readFile() throws FileNotFoundException {
@@ -132,7 +125,7 @@ public class Main {
         return keys;
     }
 
-    //find the private key if p or q is found
+    //find the private key if the factor of n is found
     public static void prikeyFinder(String sp, String sn, String se){
         BigInteger p = new BigInteger(sp);
         if(!p.isProbablePrime(18)) {

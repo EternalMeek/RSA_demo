@@ -40,7 +40,7 @@ public class OneN_OT {
         //then send the result combine with each item back to inquirer
         for(int i = 0; i < items.length; i++){
             BigInteger request = alg.decrypt(receive.subtract(new BigInteger(codes[i])).toString(), priKey, m);
-            System.out.println(i + "is: " + request.toString());
+//            System.out.println("Request item "+ (i+1) + " with possible RN: " + request.toString());
             BigInteger result = request.add(new BigInteger(items[i]));
             results[i] = result.toString();
         }
